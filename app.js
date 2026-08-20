@@ -52,24 +52,27 @@
   const gallery = document.querySelector('[data-gallery]');
   if (gallery) {
     const works = [
-      ['kids-art', '儿童手绘创意'],
-      ['travel-beijing', '故宫旅行纪念'],
-      ['couple-surprise', '异地情侣留言'],
-      ['luggage-tag', '旅行行李牌'],
-      ['wall-art', '墙面艺术挂画']
+      { original: 'assets/scenarios/kids-art-original.png', screen: 'assets/scenarios/kids-art-screen.png', label: '儿童手绘圆形吧唧', shape: 'round' },
+      { original: 'assets/scenarios/travel-beijing-original.png', screen: 'assets/scenarios-v2/travel-beijing-rect-screen.png', label: '故宫旅行矩形相册', shape: 'rect' },
+      { original: 'assets/scenarios-v2/college-student-album-original.png', screen: 'assets/scenarios-v2/college-student-album-screen.png', label: '真人女大学生矩形相册', shape: 'rect' },
+      { original: 'assets/scenarios/luggage-tag-original.png', screen: 'assets/scenarios-v2/luggage-tag-rect-screen.png', label: '方形旅行行李牌', shape: 'rect' },
+      { original: 'assets/scenarios/wall-art-original.png', screen: 'assets/scenarios-v2/wall-art-rect-screen.png', label: '矩形墙面艺术挂画', shape: 'rect' }
     ];
     const original = gallery.querySelector('[data-original]');
     const screen = gallery.querySelector('[data-screen]');
+    const outputMat = gallery.querySelector('[data-output-mat]');
     const indexText = gallery.querySelector('[data-index]');
     const dots = [...gallery.querySelectorAll('.gallery-dots button')];
     let current = 0;
     const show = index => {
       current = (index + works.length) % works.length;
-      const [file, label] = works[current];
-      original.src = `assets/scenarios/${file}-original.png`;
-      original.alt = `${label}的 AI 生成输入图像`;
-      screen.src = `assets/scenarios/${file}-screen.png`;
-      screen.alt = `${label}的六色圆屏软件输出`;
+      const work = works[current];
+      original.src = work.original;
+      original.alt = `${work.label}的 AI 生成输入图像`;
+      screen.src = work.screen;
+      screen.alt = `${work.label}的六色软件输出`;
+      outputMat.classList.toggle('is-round', work.shape === 'round');
+      outputMat.classList.toggle('is-rect', work.shape === 'rect');
       indexText.textContent = String(current + 1).padStart(2, '0');
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === current);
