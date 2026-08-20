@@ -8,6 +8,7 @@
   <title>PhotoPainter｜让照片，在纸上重新发光</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="scenes.css">
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -16,7 +17,7 @@
     <a class="brand" href="#top" aria-label="PhotoPainter 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>PhotoPainter</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">打开菜单</span><i></i><i></i></button>
     <nav id="site-nav" class="site-nav" aria-label="主要导航">
-      <a href="#story">为什么</a><a href="#experience">体验</a><a href="#gallery">作品</a><a href="#hardware">硬件</a><a href="#progress">进度</a>
+      <a href="#story">为什么</a><a href="#experience">体验</a><a href="#scenes">场景</a><a href="#gallery">作品</a><a href="#hardware">硬件</a><a href="#progress">进度</a>
       <a class="nav-cta" href="#progress">关注项目进展 <span>↘</span></a>
     </nav>
   </header>
@@ -54,28 +55,44 @@
       <div class="section-tag light reveal"><span>02</span> 从照片到纸上作品</div>
       <div class="tour-head reveal"><h2>创作，不该需要<br>学习一套复杂工具。</h2><p>导入照片、挑选风格、预览六色效果，再送到屏幕。整个流程都在熟悉的中文 Web 界面里完成。</p></div>
       <div class="video-shell reveal">
-        <video id="tour-video" preload="metadata" playsinline poster="assets/product-studio.png" aria-label="PhotoPainter 实际运行界面操作录屏"><source src="assets/product-live-tour.mp4" type="video/mp4">你的浏览器不支持视频播放。</video>
+        <video id="tour-video" preload="metadata" playsinline poster="assets/product-live-tour-poster.jpg" aria-label="PhotoPainter 实际运行界面操作录屏"><source src="assets/product-live-tour.mp4" type="video/mp4">你的浏览器不支持视频播放。</video>
         <button class="video-play" type="button" aria-label="播放演示视频"><span>▶</span><b>播放产品演示</b></button>
         <div class="video-bar"><span>PRODUCT TOUR · 16 SEC</span><span>真实运行界面录屏 · 演示数据已脱敏</span></div>
       </div>
       <ol class="workflow reveal"><li><span>01</span><b>导入</b><p>选择一张你真正喜欢的照片。</p></li><li><span>02</span><b>创作</b><p>用 8 种风格重绘，或保留原貌。</p></li><li><span>03</span><b>校准</b><p>在圆形或矩形安全区内检查构图。</p></li><li><span>04</span><b>呈现</b><p>六色预览确认后，送往电子纸。</p></li></ol>
     </section>
 
+    <section class="scenes section" id="scenes">
+      <div class="section-tag reveal"><span>03</span> 一块屏幕，不止一种生活</div>
+      <div class="scenes-head reveal"><h2>从书包上的小惊喜，<br>到客厅里的一面墙。</h2><p>下面的作品均由正在运行的 PhotoPainter 于本次官网更新中现场生成，再转换为当前 400 × 400 圆形六色软件输出。应用外观为场景化构想，并非已量产产品实拍。</p></div>
+      <div class="scene-lead reveal">
+        <figure><img src="assets/scenarios/wall-art-original.png" alt="PhotoPainter 现场生成的东方女孩与山茶花挂画输入图像" loading="lazy"></figure>
+        <div><p>WALL ART · 大幅挂画构想</p><h3>让一面墙，<br>每天都有新的艺术。</h3><span>这幅高级感东方人物海报由实机现场生成。当前运行配置列出 1.54、3.7、4.0 与 7.3 英寸驱动；约 13 英寸形态是后续产品方向，尚未列入当前驱动支持清单。</span></div>
+      </div>
+      <div class="scene-grid">
+        <article class="scene-card reveal"><div class="scene-art round"><img src="assets/scenarios/kids-art-screen.png" alt="可爱柯基儿童手绘主题的六色圆屏软件输出" loading="lazy"></div><div><p>1.69″ ROUND · 吧唧 / 随身装饰</p><h3>把孩子的想象，别在身边。</h3><span>可爱柯基、蜡笔和彩虹，适合儿童手绘美化与圆形徽章构想。</span></div></article>
+        <article class="scene-card reveal"><div class="scene-art tag"><img src="assets/scenarios/luggage-tag-screen.png" alt="可爱熊猫旅行行李牌主题的六色软件输出" loading="lazy"></div><div><p>1.54″ SMALL · 行李牌 / 书包挂饰</p><h3>小小一块，也能一眼认出。</h3><span>粗轮廓和高对比构图，在小尺寸上也保持醒目；可用于行李与书包身份主题。</span></div></article>
+        <article class="scene-card reveal"><div class="scene-art frame"><img src="assets/scenarios/travel-beijing-screen.png" alt="故宫旅行纪念主题的六色软件输出" loading="lazy"></div><div><p>3.7–7.3″ FRAME · 家庭相册构想</p><h3>旅行回来，照片不再沉睡。</h3><span>故宫红墙、金瓦与旅行人物，构想用于桌面相册和家庭记忆画框；不同尺寸仍需分别完成硬件验证。</span></div></article>
+        <article class="scene-card reveal"><div class="scene-art round"><img src="assets/scenarios/couple-surprise-screen.png" alt="异地情侣白猫橘猫月亮主题的六色圆屏软件输出" loading="lazy"></div><div><p>ROUND MESSAGE · 情侣小物</p><h3>相隔两座城，也看同一轮月亮。</h3><span>白猫与橘猫的异地留言小惊喜，可与便签内容一起构成每日问候。</span></div></article>
+      </div>
+      <div class="note-showcase reveal"><div><p>DAILY NOTE · 实机现场渲染</p><h3>一句鼓励，<br>也值得被认真摆出来。</h3><span>“把喜欢的事，慢慢做成热爱”“给远方的你一个拥抱”——该便签由实际运行中的 PhotoPainter 现场写入并渲染。</span></div><figure><img src="assets/scenarios/daily-encouragement-note.png" alt="PhotoPainter 现场渲染的每日鸡汤和情侣问候便签" loading="lazy"></figure></div>
+    </section>
+
     <section class="gallery section" id="gallery">
-      <div class="section-tag reveal"><span>03</span> 实际软件输出示例</div>
-      <div class="gallery-head reveal"><h2>六种颜色，<br>留下刚好的细节。</h2><p>以下均为实际软件生成的原图与 400 × 400 六色屏幕输出文件，用于刷新前预览；不是实体屏幕拍摄效果。</p></div>
+      <div class="section-tag reveal"><span>04</span> 实际软件输出示例</div>
+      <div class="gallery-head reveal"><h2>六种颜色，<br>留下刚好的细节。</h2><p>以下为本次更新中由实际运行设备现场生成的输入图像与 400 × 400 六色圆屏软件输出，用于刷新前预览；不是实体屏幕拍摄效果。</p></div>
       <div class="gallery-stage reveal" data-gallery>
         <div class="compare-pair">
-          <figure class="art original"><img data-original src="assets/artworks/20260812-133831-24aed89a-original.png" alt="作品 1 的 AI 生成输入图像" width="1536" height="1024"><figcaption>AI 生成输入图像 <span>AI-GENERATED INPUT</span></figcaption></figure>
+          <figure class="art original"><img data-original src="assets/scenarios/kids-art-original.png" alt="儿童手绘创意美化的 AI 生成输入图像"><figcaption>AI 生成输入图像 <span>LIVE-GENERATED INPUT</span></figcaption></figure>
           <div class="transform-arrow" aria-hidden="true">→</div>
-          <figure class="art screen"><div class="round-mat"><img data-screen src="assets/artworks/20260812-133831-24aed89a-screen.png" alt="作品 1 的六色圆屏软件输出" width="400" height="400"></div><figcaption>屏幕输出预览 <span>SOFTWARE OUTPUT</span></figcaption></figure>
+          <figure class="art screen"><div class="round-mat"><img data-screen src="assets/scenarios/kids-art-screen.png" alt="儿童手绘创意美化的六色圆屏软件输出" width="400" height="400"></div><figcaption>屏幕输出预览 <span>SOFTWARE OUTPUT</span></figcaption></figure>
         </div>
-        <div class="gallery-controls"><p><span data-index>01</span> / 03</p><div class="gallery-buttons"><button type="button" data-prev aria-label="上一组作品">←</button><button type="button" data-next aria-label="下一组作品">→</button></div><div class="gallery-dots" aria-label="选择作品"><button class="active" type="button" aria-pressed="true" aria-label="作品 1"></button><button type="button" aria-pressed="false" aria-label="作品 2"></button><button type="button" aria-pressed="false" aria-label="作品 3"></button></div></div>
+        <div class="gallery-controls"><p><span data-index>01</span> / 05</p><div class="gallery-buttons"><button type="button" data-prev aria-label="上一组作品">←</button><button type="button" data-next aria-label="下一组作品">→</button></div><div class="gallery-dots" aria-label="选择作品"><button class="active" type="button" aria-pressed="true" aria-label="儿童手绘创意"></button><button type="button" aria-pressed="false" aria-label="故宫旅行纪念"></button><button type="button" aria-pressed="false" aria-label="情侣留言惊喜"></button><button type="button" aria-pressed="false" aria-label="行李牌创意"></button><button type="button" aria-pressed="false" aria-label="墙面挂画创意"></button></div></div>
       </div>
     </section>
 
     <section class="features section">
-      <div class="section-tag reveal"><span>04</span> 每一步，都看得见</div>
+      <div class="section-tag reveal"><span>05</span> 每一步，都看得见</div>
       <article class="feature feature-wide reveal"><div class="feature-copy"><p>创作工作台</p><h3>在发送之前，<br>先看见真实的颜色。</h3><ul><li>照片导入与 AI 重绘</li><li>8 种创作风格</li><li>六色像素级预览</li><li>圆形 / 矩形安全区</li></ul></div><figure class="ui-frame"><img src="assets/product-studio.png" alt="PhotoPainter 中文创作工作台实际界面" width="1440" height="980" loading="lazy"></figure></article>
       <div class="feature-grid">
         <article class="feature reveal"><figure class="ui-frame"><img src="assets/product-library.png" alt="PhotoPainter 本地作品库实际界面" width="1440" height="980" loading="lazy"></figure><div class="feature-copy"><p>本地作品库</p><h3>每一次创作，<br>都留在你身边。</h3><span>浏览、管理与再次显示作品，无需依赖云端相册。</span></div></article>
@@ -85,13 +102,13 @@
     </section>
 
     <section class="hardware section" id="hardware">
-      <div class="section-tag reveal"><span>05</span> 从一块圆屏开始</div>
+      <div class="section-tag reveal"><span>06</span> 从一块圆屏开始</div>
       <div class="hardware-intro reveal"><h2>为真实硬件，<br>做细致的适配。</h2><p>当前原型围绕 Raspberry Pi 与 Good Display Spectra 6 电子纸构建。你可以选择屏幕与转接板、可视化编辑 GPIO 接线，并通过安装旋转校准让画面落在正确方向。</p></div>
       <div class="hardware-card reveal">
         <div class="hardware-spec"><p>CURRENT REFERENCE BUILD</p><h3>1.69″ 圆形<br>Spectra 6</h3><dl><div><dt>分辨率</dt><dd>400 × 400</dd></div><div><dt>显示屏</dt><dd>GDEH0169E01</dd></div><div><dt>适配板</dt><dd>DESPI‑C169</dd></div><div><dt>主控</dt><dd>Raspberry Pi 4</dd></div></dl></div>
         <figure class="hardware-ui"><img src="assets/product-hardware.png" alt="PhotoPainter 屏幕、转接板选择与 GPIO 接线编辑实际界面" width="1440" height="980" loading="lazy"></figure>
       </div>
-      <div class="compatibility reveal"><p>兼容方向</p><ul><li><b>Pi Zero 2 W</b><span>轻巧部署</span></li><li><b>Raspberry Pi 4</b><span>参考平台</span></li><li><b>1.54 / 3.7 / 4.0 / 7.3″</b><span>多种 E6 屏幕与适配板</span></li></ul><small>不同硬件组合仍在持续验证中，最终支持范围以项目进展更新为准。</small></div>
+      <div class="compatibility reveal"><p>尺寸与角色</p><ul><li><b>1.54″ 小屏</b><span>行李牌 / 书包挂饰构想</span></li><li><b>1.69″ 圆屏</b><span>吧唧 / 徽章 / 情侣小物</span></li><li><b>3.7–7.3″</b><span>桌面相册 / 家庭艺术画框</span></li><li><b>约 13″ 大屏</b><span>墙面挂画方向 · 尚未纳入当前驱动清单</span></li></ul><small>当前实机参考组合为 1.69 英寸圆屏；运行配置列出 1.54、3.7、4.0、7.3 英寸驱动。不同硬件组合仍在持续验证，13 英寸为产品方向而非已验证能力。</small></div>
     </section>
 
     <section class="privacy section">

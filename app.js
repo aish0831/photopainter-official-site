@@ -52,9 +52,11 @@
   const gallery = document.querySelector('[data-gallery]');
   if (gallery) {
     const works = [
-      ['20260812-133831-24aed89a', '作品 1'],
-      ['20260812-135700-a1047b0b', '作品 2'],
-      ['20260812-152403-d70e5715', '作品 3']
+      ['kids-art', '儿童手绘创意'],
+      ['travel-beijing', '故宫旅行纪念'],
+      ['couple-surprise', '异地情侣留言'],
+      ['luggage-tag', '旅行行李牌'],
+      ['wall-art', '墙面艺术挂画']
     ];
     const original = gallery.querySelector('[data-original]');
     const screen = gallery.querySelector('[data-screen]');
@@ -64,10 +66,10 @@
     const show = index => {
       current = (index + works.length) % works.length;
       const [file, label] = works[current];
-      original.src = `assets/artworks/${file}-original.png`;
-      original.alt = `${label} 的 AI 生成输入图像`;
-      screen.src = `assets/artworks/${file}-screen.png`;
-      screen.alt = `${label} 的六色圆屏软件输出`;
+      original.src = `assets/scenarios/${file}-original.png`;
+      original.alt = `${label}的 AI 生成输入图像`;
+      screen.src = `assets/scenarios/${file}-screen.png`;
+      screen.alt = `${label}的六色圆屏软件输出`;
       indexText.textContent = String(current + 1).padStart(2, '0');
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === current);
