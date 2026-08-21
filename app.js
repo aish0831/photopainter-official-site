@@ -84,6 +84,55 @@
     dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
   }
 
+  const setupContentGallery = ({ rootSelector, items, imageSelector, kickerSelector, titleSelector, copySelector, indexSelector, prevSelector, nextSelector, dotsSelector }) => {
+    const root = document.querySelector(rootSelector);
+    if (!root) return;
+    const image = root.querySelector(imageSelector);
+    const kicker = root.querySelector(kickerSelector);
+    const title = root.querySelector(titleSelector);
+    const copy = root.querySelector(copySelector);
+    const indexText = root.querySelector(indexSelector);
+    const dots = [...root.querySelectorAll(dotsSelector)];
+    let current = 0;
+    const show = index => {
+      current = (index + items.length) % items.length;
+      const item = items[current];
+      image.src = item.image;
+      image.alt = item.alt;
+      kicker.textContent = item.kicker;
+      title.innerHTML = item.title;
+      copy.textContent = item.copy;
+      indexText.textContent = String(current + 1).padStart(2, '0');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === current);
+        dot.setAttribute('aria-pressed', String(i === current));
+      });
+    };
+    root.querySelector(prevSelector)?.addEventListener('click', () => show(current - 1));
+    root.querySelector(nextSelector)?.addEventListener('click', () => show(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => show(i)));
+  };
+
+  setupContentGallery({
+    rootSelector: '[data-scene-gallery]', imageSelector: '[data-scene-image]', kickerSelector: '[data-scene-kicker]', titleSelector: '[data-scene-title]', copySelector: '[data-scene-copy]', indexSelector: '[data-scene-index]', prevSelector: '[data-scene-prev]', nextSelector: '[data-scene-next]', dotsSelector: '.scene-dots button',
+    items: [
+      { image: 'assets/lifestyle/album-living-room.webp', alt: '完整电子相册摆放在客厅边柜上的生活场景概念图', kicker: 'HOME ALBUM · 客厅相册', title: '旅行回来，<br>照片不再沉睡。', copy: '完整的相册外框、支架与故宫旅行画面一起摆在边柜上，像家中的一本常翻常新的相册。' },
+      { image: 'assets/lifestyle/backpack-subway.webp', alt: '成年女大学生在地铁背着带有方形电子纸挂件的书包概念图', kicker: 'BAG CHARM · 地铁通勤', title: '背在身上，<br>把喜欢带去远方。', copy: '小巧的完整挂件通过挂环连接书包，让可爱的熊猫图案成为通勤穿搭里安静又特别的细节。' },
+      { image: 'assets/lifestyle/luggage-airport.webp', alt: '方形电子纸挂件连接旅行箱并出现在机场行李提取区的概念图', kicker: 'TRAVEL TAG · 旅行识别', title: '相似的行李中，<br>一眼看见自己的。', copy: '方形挂件通过金属扣与织带连接旅行箱，个性画面与完整产品结构在真实旅行环境中清楚可见。' },
+      { image: 'assets/lifestyle/wall-art-home.webp', alt: '完整矩形电子纸艺术画框挂在现代客厅墙面的生活场景概念图', kicker: 'WALL ART · 客厅艺术', title: '让一面墙，<br>每天都有新的情绪。', copy: '完整的窄边画框、人物花卉作品与客厅尺度一起出现，让电子纸更像家中的一幅安静艺术品。' }
+    ]
+  });
+
+  setupContentGallery({
+    rootSelector: '[data-feature-gallery]', imageSelector: '[data-feature-image]', kickerSelector: '[data-feature-kicker]', titleSelector: '[data-feature-title]', copySelector: '[data-feature-copy]', indexSelector: '[data-feature-index]', prevSelector: '[data-feature-prev]', nextSelector: '[data-feature-next]', dotsSelector: '.feature-dots button',
+    items: [
+      { image: 'assets/product-studio.png', alt: 'PhotoPainter 创作工作台实际界面', kicker: '创作工作台', title: '在呈现之前，<br>先看见它的样子。', copy: '导入照片、尝试不同风格、调整构图并预览最终效果，整个创作过程清晰地留在同一个界面里。' },
+      { image: 'assets/product-library.png', alt: 'PhotoPainter 作品收藏实际界面', kicker: '作品收藏', title: '喜欢的每一次创作，<br>都在身边。', copy: '浏览、管理并再次呈现过去的作品，让旅行、家人和宠物照片随时重新来到眼前。' },
+      { image: 'assets/product-notes.png', alt: 'PhotoPainter 每日便签实际界面', kicker: '每日便签', title: '不只展示照片，<br>也留下一句话。', copy: '把提醒、问候或当天的心情，变成桌面上安静的一页，和喜欢的图片轮流陪伴你。' },
+      { image: 'assets/product-mobile.png', alt: 'PhotoPainter 移动端实际界面', kicker: '移动使用', title: '拿起手机，<br>随时换一幅喜欢的画。', copy: '手机上的界面保持简洁，选作品、看状态、换内容，不必把所有复杂设置铺在眼前。' }
+    ]
+  });
+
   document.querySelectorAll('.accordion button').forEach(button => {
     button.addEventListener('click', () => {
       const open = button.getAttribute('aria-expanded') === 'true';
